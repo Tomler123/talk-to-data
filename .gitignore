@@ -1,0 +1,25 @@
+# Environment files
+.env
+
+# Pipenv
+Pipfile
+Pipfile.lock
+
+# Python bytecode & packaging
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# VS Code workspace
+.vscode/
+
+# pytest cache
+.pytest_cache/
+
+# React frontend dependencies & build (if you ever add build outputs)
+frontend/node_modules/
+frontend/build/
+
+# OS junk
+.DS_Store
+Thumbs.db
