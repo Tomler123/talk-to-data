@@ -7,6 +7,7 @@ from extensions import db
 from werkzeug.security import generate_password_hash
 from models import Role, User
 from flask_jwt_extended import JWTManager, create_access_token
+from datetime import timedelta
 
 load_dotenv()
 
@@ -17,6 +18,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'dev-secret')
+# make access tokens last 1 hour instead of 15 min
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)
 jwt = JWTManager(app)
 
 from models import Role, User

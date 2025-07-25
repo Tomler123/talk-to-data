@@ -8,15 +8,6 @@ from models import User, Role
 
 auth_bp = Blueprint('auth', __name__)
 
-# @auth_bp.route('/login', methods=['POST'])
-# def login():
-#     data = request.get_json()
-#     username = data.get('username')
-#     password = data.get('password')
-#     if username and password:
-#         return jsonify({'message': 'Login successful'}), 200
-#     return jsonify({'message': 'Missing credentials'}), 400
-
 @auth_bp.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -38,7 +29,7 @@ def login():
 
 @auth_bp.route('/register', methods=['POST'])
 @jwt_required()
-@role_required('Admin')
+# @role_required('Admin')
 def register():
     data = request.get_json()
     username = data.get('username')
@@ -62,3 +53,12 @@ def register():
         'username': new_user.username,
         'role': new_user.role.name
     }), 201
+
+# GET /auth/roles — list all available roles for the register form
+@auth_bp.route('/roles', methods=['GET'])
+@jwt_required()
+# @role_required('Admin')
+def list_roles():
+    from models import Role
+    roles = Role.query.all()
+    return jsonify([r.name for r in roles]), 200

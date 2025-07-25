@@ -2,6 +2,8 @@ from extensions import db
 from sqlalchemy.dialects.postgresql import BYTEA
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy import LargeBinary
+from sqlalchemy.dialects.postgresql import JSON
+from datetime import datetime
 
 class Role(db.Model):
     __tablename__ = 'roles'
@@ -24,6 +26,12 @@ class User(db.Model):
     voice_profile = db.Column(LargeBinary)
     # relationship to Role
     role = db.relationship('Role', back_populates='users')
+    # relationship to multiple voice recordings
+    voices = db.relationship(
+        'Voice',
+        back_populates='user',
+        cascade='all, delete-orphan'
+    )
 
     # password helpers
     def set_password(self, password: str) -> None:
@@ -41,3 +49,17 @@ class User(db.Model):
     
     def __repr__(self):
         return f"<User {self.username} ({self.role.name})>"
+
+
+class Voice(db.Model):
+    __tablename__ = 'voices'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    # raw audio blob (e.g. your base64‑decoded webm bytes)
+    audio_data = db.Column(LargeBinary, nullable=False)
+    # optional embedding vector (filled in later)
+    embedding = db.Column(JSON, nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+
+    # back‑ref to its owner
+    user = db.relationship('User', back_populates='voices')
