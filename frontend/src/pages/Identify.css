@@ -1,0 +1,101 @@
+/* Container */
+.identify-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+}
+
+/* Headings */
+.identify-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+.identify-container p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* VoiceCapture block */
+.identify-container > div voicecapture,
+.identify-container .voice-capture {
+  margin-bottom: 1.5rem;
+}
+
+/* Audio + Identify button */
+.identify-container audio {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.identify-container .identify-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.identify-container .identify-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.identify-container .identify-btn:not(:disabled):hover {
+  background-color: #2563eb;
+}
+
+/* Fallback credential inputs */
+.identify-container input[type="text"],
+.identify-container input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #374151;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* Login button */
+.identify-container .login-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #10b981;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.identify-container .login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.identify-container .login-btn:not(:disabled):hover {
+  background-color: #059669;
+}
+
+/* Error message */
+.identify-container .error {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #b91c1c;
+}

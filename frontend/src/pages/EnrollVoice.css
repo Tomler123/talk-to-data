@@ -1,0 +1,51 @@
+/* wrapper that fills screen and centers .enroll-container */
+.enroll-page {
+  display: flex;
+  justify-content: center;   /* horizontal centering */
+  align-items: center;       /* vertical centering */
+  min-height: 100vh;         /* full viewport height */
+  background-color: var(--color-bg); /* optional page bg */
+}
+
+/* your existing container styles */
+.enroll-container {
+  max-width: 600px;
+  width: 100%;               /* ensure it can shrink on small screens */
+  margin: 0;                 /* remove top/bottom margins, wrapper handles centering */
+  padding: 2rem;
+  background: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* keep the rest as before… */
+.enroll-container .stepper {
+  width: 100%;
+  justify-content: center;
+}
+.enroll-container blockquote {
+  max-width: 100%;
+  width: 100%;
+}
+.enroll-container audio {
+  margin: 1rem 0;
+}
+.enroll-container .flex {
+  justify-content: center;
+}
+.enroll-container .button {
+  min-width: 120px;
+}
+.enroll-container .error {
+  color: #DC2626;
+  margin-top: 1rem;
+}
+.enroll-container .success {
+  color: var(--color-success);
+  margin-top: 1rem;
+}

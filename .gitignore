@@ -1,0 +1,16 @@
+backend/venv/
+backend/.env
+__pycache/
+*.pyc
+frontend/node_modules/
+
+.env
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+/backend/venv/
+/backend/Pipfile.lock
+
+/backend/.env

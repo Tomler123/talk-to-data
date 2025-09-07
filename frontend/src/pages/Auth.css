@@ -1,0 +1,86 @@
+/* Centering & card */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding: 1rem;
+}
+
+.auth-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Headings */
+.auth-card h1,
+.auth-card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+/* Inputs & selects */
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+  outline: none;
+  border-color: var(--color-info);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Button */
+.auth-card button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: var(--color-info);
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.auth-card button:disabled {
+  background-color: #E5E7EB;
+  color: var(--color-text-tertiary);
+  cursor: not-allowed;
+}
+
+.auth-card button:not(:disabled):hover {
+  background-color: #2563EB; /* a bit darker */
+}
+
+/* Messages */
+.auth-card .error {
+  color: #DC2626;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.auth-card .success {
+  color: var(--color-success);
+  margin-top: 0.5rem;
+  text-align: center;
+}

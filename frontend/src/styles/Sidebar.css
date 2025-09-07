@@ -1,0 +1,94 @@
+/* Sidebar base */
+.sidebar {
+  width: 240px;
+  background-color: var(--color-card-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+/* Logo */
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.sidebar .logo img {
+  width: 32px;
+  margin-right: 0.5rem;
+}
+.sidebar .logo span {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-info);
+}
+
+/* Nav links */
+.sidebar nav {
+  flex: 1;
+}
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s;
+}
+.sidebar nav a .icon {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+.sidebar nav a:hover {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+.sidebar nav a.active {
+  background-color: var(--color-info);
+  color: #fff;
+}
+
+/* Footer & upgrade button */
+.sidebar .footer {
+  margin-top: auto;
+  text-align: center;
+}
+.sidebar .upgrade {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-warning);
+  color: var(--color-text-primary);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.sidebar .upgrade:hover {
+  opacity: 0.9;
+  background-color: #f6c80f; /* slightly darker */
+}
+
+/* At bottom of Sidebar.css */
+.sidebar nav .nav-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+}
+.sidebar nav .nav-logout:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

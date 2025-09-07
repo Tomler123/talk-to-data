@@ -1,0 +1,138 @@
+/* Container and page layout */
+.audit-wrapper {
+  background-color: #f9fafb;
+  min-height: 100vh;
+  padding: 2rem;
+}
+.audit-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* Title */
+.audit-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  padding: 1.5rem 2rem 0;
+}
+
+/* Table wrapper */
+.audit-table-wrapper {
+  overflow-x: auto;
+  padding: 1rem 2rem;
+}
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.audit-table-header {
+  background-color: #f3f4f6;
+}
+.audit-cell {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Body rows */
+.audit-table-body .audit-row:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Details cell */
+.details-cell pre {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  white-space: pre-wrap;
+}
+
+/* Pagination bar */
+.audit-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f4f6;
+  padding: 1rem 2rem;
+}
+.audit-page-info {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Buttons */
+.audit-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.prev-btn {
+  background-color: #ffffff;
+  color: #374151;
+  border-color: #d1d5db;
+}
+.prev-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.prev-btn:not(:disabled):hover {
+  background-color: #f3f4f6;
+}
+.next-btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+.next-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.next-btn:not(:disabled):hover {
+  background-color: #2563eb;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f3f4f6;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.filter-bar input {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  width: 8rem;
+}
+
+.filter-bar .search-btn {
+  /* base .audit-btn styles are inherited */
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.filter-bar .search-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filter-bar .search-btn:not(:disabled):hover {
+  background-color: #2563eb;
+}

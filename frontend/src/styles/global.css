@@ -1,0 +1,166 @@
+/* 1) Design tokens */
+:root {
+  /* colors */
+  --color-bg: #F9FAFB;
+  --color-card-bg: #FFFFFF;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-success: #10B981;
+  --color-info: #3B82F6;
+  --color-warning: #FACC15;
+
+  /* typography */
+  --font-family-base: 'Inter', sans-serif;
+
+  /* shape & shadow */
+  --border-radius: 1rem;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Base reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+/* Buttons */
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+.button-primary {
+  background-color: var(--color-info);
+  color: white;
+}
+.button-disabled {
+  background-color: #E5E7EB;
+  color: var(--color-text-tertiary);
+  cursor: not-allowed;
+}
+
+/* Stepper */
+.stepper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.stepper .step {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.stepper .circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.stepper .completed .circle {
+  background-color: var(--color-success);
+  color: white;
+}
+.stepper .current .circle {
+  background-color: var(--color-info);
+  color: white;
+}
+.stepper .upcoming .circle {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-text-tertiary);
+  color: var(--color-text-tertiary);
+}
+.stepper .step + .step:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  width: calc(100% - 2rem);
+  height: 0.25rem;
+  background-color: #E5E7EB;
+  z-index: -1;
+}
+.stepper .completed + .step:before {
+  background-color: var(--color-success);
+}
+
+/* Utility flex spacing */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.space-x-2 > * + * { margin-left: 0.5rem; }
+
+/* Cards & containers */
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+/* ===== Beautiful Audio Card Styles ===== */
+
+/* Wrapper around native player */
+audio {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem 0;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* WebKit: style the control bar background */
+audio::-webkit-media-controls-panel {
+  background-color: #f3f4f6;
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+}
+
+/* WebKit: Play/Pause button */
+audio::-webkit-media-controls-play-button {
+  background-color: #2563eb;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.25rem;
+  margin-right: 0.75rem;
+}
+
+/* WebKit: Timeline (progress bar) */
+audio::-webkit-media-controls-timeline {
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #e5e7eb;
+}
+
+/* WebKit: Volume slider track */
+audio::-webkit-media-controls-volume-slider {
+  width: 4rem;
+}
+
+/* Firefox: style container */
+audio::-moz-media-controls-panel {
+  background-color: #f3f4f6;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+/* Fallback for browsers that don’t support pseudo styling – still card-style */
+audio:not(:defined) {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
